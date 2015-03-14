@@ -1,5 +1,10 @@
 #include <gtk/gtk.h>
 
+static void
+cb_button_clicked (GtkWidget *button, gpointer user_data) {
+    gtk_main_quit();
+}
+
 int
 main (int argc, char* argv[]) {
     GtkWidget *window;
@@ -11,6 +16,9 @@ main (int argc, char* argv[]) {
 
     button = gtk_button_new_with_label("Quit");
     gtk_container_add(GTK_CONTAINER(window), button);
+
+    g_signal_connect(G_OBJECT(button), "clicked",
+                     G_CALLBACK(cb_button_clicked), NULL);
 
     gtk_widget_show_all(window);
     gtk_main();
