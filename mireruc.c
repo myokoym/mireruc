@@ -1,12 +1,14 @@
 #include <gtk/gtk.h>
 
 static void
-cb_button_clicked (GtkWidget *button, gpointer user_data) {
+cb_button_clicked (GtkWidget *button, gpointer user_data)
+{
     gtk_main_quit();
 }
 
 int
-main (int argc, char* argv[]) {
+main (int argc, char* argv[])
+{
     GtkWidget *window;
     GtkWidget *vbox;
     GtkWidget *image;
